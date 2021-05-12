@@ -29,7 +29,7 @@
 			form.addEventListener('submit', (e) => {
 				e.preventDefault();
 
-				socket.emit('createPair', {
+				socket.emit('setPair', {
 					key: keyInput.value,
 					value: valueInput.value
 				});

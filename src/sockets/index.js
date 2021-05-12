@@ -1,5 +1,5 @@
 import socketio from 'socket.io';
-import { createPair } from '@src/models/pairs';
+import { setPair } from '@src/models/pairs';
 
 export default (server) => {
 	const io = socketio(server);
@@ -8,7 +8,7 @@ export default (server) => {
 	io.on('connection', (socket) => {
 		console.log('user connected');
 
-		socket.on('createPair', (pair) => {
+		socket.on('setPair', (pair) => {
 			if (!pair.key) {
 				socket.emit('pairMsg', {
 					msg: 'key is missing',
@@ -22,7 +22,7 @@ export default (server) => {
 				return;
 			}
 
-			const success = createPair(pair);
+			const success = setPair(pair);
 			if (!success) {
 				socket.emit('pairMsg', {
 					msg: 'something went wrong',
