@@ -1,0 +1,32 @@
+{
+  "name": "key-value-store",
+  "version": "1.0.0",
+  "description": "application to store values by keys",
+  "main": "index.js",
+  "scripts": {
+    "serve": "nodemon --exec ./node_modules/.bin/babel-node src/index.js --watch src",
+    "build": "babel ./src --out-dir ./build",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.8",
+    "socket.io": "^4.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.14.0",
+    "@babel/node": "^7.13.13",
+    "@babel/preset-env": "^7.14.1",
+    "@babel/runtime": "^7.14.0",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "eslint": "^7.26.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-xo": "^0.36.0",
+    "eslint-import-resolver-babel-module": "^5.3.1",
+    "eslint-plugin-import": "^2.22.1",
+    "nodemon": "^2.0.7"
+  }
+}
