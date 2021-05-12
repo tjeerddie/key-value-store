@@ -2,7 +2,7 @@ import express from 'express';
 import http from 'http';
 import mongoose from 'mongoose';
 
-// import socket from '@src/sockets';
+import socket from '@src/sockets';
 import routes from '@src/routes';
 import { handleError } from '@src/middlewares';
 import { PORT, DATABASE_URL } from '@src/env';
@@ -12,15 +12,18 @@ const server = new http.Server(app);
 const port = PORT || 5000;
 const databaseUrl = DATABASE_URL || 'localhost';
 
-mongoose.connect(`mongodb://${databaseUrl}/pairs`, { useNewUrlParser: true });
+mongoose.connect(
+	`mongodb://${databaseUrl}/pairs`,
+	{ useUnifiedTopology: true },
+);
 
 // socket connections.
-// socket(server);
+socket(server);
 
 // API endpoints.
 routes(app);
 
-app.use((err, _req, res) => {
+app.use((err, _req, res, _) => {
 	handleError(err, res);
 });
 

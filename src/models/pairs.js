@@ -7,15 +7,15 @@ const PairSchema = new mongoose.Schema({
 
 const Pair = mongoose.model('Pair', PairSchema);
 
-const createPair = ({ key, value }) => {
-	const newPair = new Pair({ key, value });
+const createPair = (pair) => {
+	const newPair = new Pair(pair);
 
-	return newPair.save((error) => {
+	newPair.save((error) => {
 		if (error) {
 			console.log(error);
-			return error;
+			return false;
 		}
-		return newPair;
+		return true;
 	});
 };
 
