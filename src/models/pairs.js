@@ -19,11 +19,7 @@ const createPair = (pair) => {
 	});
 };
 
-const getPair = async (key) => {
-	const pair = await Pair.find({ key })
-		.catch(err => console.log('Caught:', err.message));
-	return pair[0];
-};
+const getPair = key => Pair.find({ key });
 
 export {
 	createPair,
