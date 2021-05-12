@@ -12,11 +12,11 @@ application to store values by keys.
  - [x] KVS-1: create project setup.
    - setup node express server.
    - setup websockets with socket.io.
-   - add typescript. (this is not implemented)
-   - add unit testing. (this is not implemented)
+   - add typescript. (not implemented)
+   - add unit testing. (not implemented)
    - document setup.
- - [ ] KVS-2: create websockets to add key value pairs.
-   - create unit tests to check connection and expected results from returning messages.
+ - [x] KVS-2: create websockets to add key value pairs.
+   - create unit tests to check connection and expected results from returning messages. (not implemented)
    - create websocket to create a pair with key and value.
    - create a function in the Pair model to use in the websocket to create a database object.
    - create validation to check if key and value are send and if not send validation message.
