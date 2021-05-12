@@ -6,9 +6,9 @@ const PairController = {
 		const pair = await getPair(key);
 
 		if (!pair) {
-			res.json({ detail: `pair not found with key: ${key}` });
+			return res.json({ detail: `pair not found with key: ${key}` });
 		}
-		res.json(pair);
+		return res.json(pair);
 	},
 };
 
