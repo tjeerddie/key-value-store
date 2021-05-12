@@ -26,6 +26,6 @@ application to store values by keys.
    - create a function in the Pair model to use in the websocket to create a database object.
    - create validation to check if key and value are send and if not send validation message.
    - add html page to use the websocket.
- - [ ] KVS-3: create endpoint to get key value pairs.
-   - create unit tests to check expected results.
+ - [x] KVS-3: create endpoint to get key value pairs.
+   - create unit tests to check expected results. (not implemented)
    - create endpoint to return key with value pair, using `/pairs/:key`.
