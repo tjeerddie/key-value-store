@@ -7,6 +7,11 @@ application to store values by keys.
 - start mongodb with docker `docker-compose up -d`.
 - use `npm run serve` to start the application.
 
+## Use
+
+- at `localhost:3000` you can use the socket with pair inputs.
+- at `localhost:3000/pairs/:key` you can get a specific pair.
+
 ## todo
 
  - [x] KVS-1: create project setup.
@@ -21,6 +26,6 @@ application to store values by keys.
    - create a function in the Pair model to use in the websocket to create a database object.
    - create validation to check if key and value are send and if not send validation message.
    - add html page to use the websocket.
- - [ ] KVS-3: create endpoint to get key value pairs.
-   - create unit tests to check expected results.
+ - [x] KVS-3: create endpoint to get key value pairs.
+   - create unit tests to check expected results. (not implemented)
    - create endpoint to return key with value pair, using `/pairs/:key`.
