@@ -9,13 +9,15 @@ const Pair = mongoose.model('Pair', PairSchema);
 
 const getPair = key => Pair.findOne({ key });
 
-const createPair = async (pair) => {
-	let dbPair = await getPair(pair.key);
-	if (!dbPair) {
-		dbPair = new Pair(pair);
+const setPair = async (reqPair) => {
+	let pair = await getPair(reqPair.key);
+	if (pair) {
+		pair.value = reqPair.value;
+	} else {
+		pair = new Pair(reqPair);
 	}
 
-	dbPair.save((error) => {
+	pair.save((error) => {
 		if (error) {
 			console.log(error);
 			return false;
@@ -25,6 +27,6 @@ const createPair = async (pair) => {
 };
 
 export {
-	createPair,
+	setPair,
 	getPair,
 };

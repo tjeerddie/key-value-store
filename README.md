@@ -7,6 +7,11 @@ application to store values by keys.
 - start mongodb with docker `docker-compose up -d`.
 - use `npm run serve` to start the application.
 
+## Use
+
+- at `localhost:3000` you can use the socket with pair inputs.
+- at `localhost:3000/pairs/:key` you can get a specific pair.
+
 ## todo
 
  - [x] KVS-1: create project setup.
