@@ -7,10 +7,15 @@ const PairSchema = new mongoose.Schema({
 
 const Pair = mongoose.model('Pair', PairSchema);
 
-const createPair = (pair) => {
-	const newPair = new Pair(pair);
+const getPair = key => Pair.findOne({ key });
 
-	newPair.save((error) => {
+const createPair = async (pair) => {
+	let dbPair = await getPair(pair.key);
+	if (!dbPair) {
+		dbPair = new Pair(pair);
+	}
+
+	dbPair.save((error) => {
 		if (error) {
 			console.log(error);
 			return false;
@@ -18,8 +23,6 @@ const createPair = (pair) => {
 		return true;
 	});
 };
-
-const getPair = key => Pair.find({ key });
 
 export {
 	createPair,
