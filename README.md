@@ -14,8 +14,3 @@ application to store values by keys.
  - [ ] add message if pair creation is successfull.
  - [ ] create endpoint to get key value pairs.
  - [ ] move get pair endpoint into a PairController in a controllers folder.
-
-
-- should have checked out a boilerplate or existing template.
-- took long with database connection...
-- took too long trying to setup typescript and should have kept it out.
